@@ -16,7 +16,7 @@ const bot = linebot({
 
 //express 設置
 const app = express();
-const port = 3000;
+// const port = 3000;
 
 //首頁
 app.get('/',function(req,res){
