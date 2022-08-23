@@ -16,19 +16,19 @@ const express = require('express');
 
 //express 設置
 const app = express();
-const port = 3000;
+// const port = 3000;
 
 //首頁
 app.get('/',function(req,res){
   res.send('hello word')
 })
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
-//沒有定義PORT 設置80
-// app.listen(process.env.PORT || 80, function () {
-//   console.log('[BOT已準備就緒]');
-// });
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`)
+// })
+// 沒有定義PORT 設置80
+app.listen(process.env.PORT || 80, function () {
+  console.log('[BOT已準備就緒]');
+});
 
 
 //解析JSON
