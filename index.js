@@ -30,9 +30,9 @@ const bot = linebot({
 });
 
 // //解析line JSON
-// const linebotParser = bot.parser;
+const linebotParser = bot.parser;
 // //處理LINE訊息伺服器請求
-// app.post('/linewebhook',linebotParser)
+app.post('/linewebhook',linebotParser)
 
 // 當有人傳送訊息給Bot時
 bot.on('message', function (event) {
@@ -63,7 +63,9 @@ bot.on('message', function (event) {
   // });
   
 });
-
+app.listen(process.env.PORT || 80, function () {
+	console.log('LineBot is running.');
+});
 // Bot所監聽的webhook路徑與port
 // bot.listen('/linewebhook', 3000, function () {
 //     console.log('BOT已準備就緒');
