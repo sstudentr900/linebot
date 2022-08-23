@@ -10,9 +10,9 @@ app.get('/',function(req,res){
 });//首頁
 
 //app監聽port(必須)
-app.listen(process.env.port || 80, function () {
-  console.log('app已準備就緒');
-});// 沒有定義PORT 設置80
+// app.listen(process.env.port || 80, function () {
+//   console.log('app已準備就緒');
+// });// 沒有定義PORT 設置80
 
 
 
@@ -68,6 +68,6 @@ bot.on('message', function (event) {
 // bot.listen('/linewebhook', 3000, function () {
 //     console.log('BOT已準備就緒');
 // });
-bot.listen('/linewebhook', 80, function () {
-  console.log('BOT已準備就緒');
-});
+// bot.listen('/linewebhook', function () {
+//   console.log('BOT已準備就緒');
+// });
