@@ -1,4 +1,4 @@
-//https://line.github.io/line-bot-sdk-nodejs/api-reference/middleware.html#usage
+
 const express = require("express");
 const line = require("@line/bot-sdk");
 
