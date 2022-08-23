@@ -1,36 +1,40 @@
-const express = require("express");
-const line = require("@line/bot-sdk");
-
-const config = {
-  channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN,
-  channelSecret: process.env.LINE_CHANNEL_SECRET,
-};
-
-const app = express();
-app.post("/", line.middleware(config), (req, res) => {
-  console.log()
-  // Promise
-  // .all(req.body.events.map(handleEvent))
-  // .then((result) =>
-  //   res.json(result)
-  // );
-});
-
-const client = new line.Client(config);
-function handleEvent(event) {
-
-  if (event.type !== "message" || event.message.type !== "text") {
-    return Promise.resolve(null);
-  }
-
-  return client.replyMessage(event.replyToken, {
-    type: "text",
-    text: event.message.text,
-  });
+import request from 'request'
+import { fibonacci, divivde,descript } from './cal.js'
+console.log(fibonacci(100),descript)
+const site_name = '美濃'
+const opts = {
+  url: 'http://opendata2.epa.gov.tw/AQI.json',
+  json: true
 }
 
-// listen on port
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`listening on ${port}`);
-});
+//request
+request.get(opts.url, (error, response, body) => {
+  // console.log('error',error);
+  if(!error && response.statusCode === 200){
+    // console.log('body',body);
+    let data;
+    let jsons = JSON.parse(body);
+    jsons.forEach(element => {
+      // console.log('json',element.SiteName,site_name);
+      if(element.SiteName==site_name){
+        data = element
+      }
+    });
+    console.log(data);
+  }
+})
+
+//rp
+// rp(opts).then(function(repos){
+//   let data;
+    
+//   for (i in repos) {
+//       if (repos[i].SiteName == site_name) {
+//           data = repos[i];
+//           break;
+//       }
+//   }
+//   console.log(data);
+// })
+
+
