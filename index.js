@@ -6,6 +6,9 @@ const express = require('express');
 
 // 用於辨識Line Channel的資訊
 const bot = linebot({
+  // channelId: process.env.CHANNEL_ID,
+	// channelSecret: process.env.CHANNEL_SECRET,
+	// channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN
   channelId: '1654921355',
   channelSecret: '6aecda9fc9f58ddb9e452f977c80bbb1',
   channelAccessToken: 'CWCKiPXFGVqfPc92uF1ZJuybJakn4rhH5ih3EeA47N6RbIP0VZbMLywZQt9McHCYvh8zB/qohLtO1CTd+NT6wIlj1BIXNTP7j4cE0kRxr+v9OL7aJeSE7zhYsDm7BoHriS7NfKILJQPqkC7DSWDyQdB04t89/1O/w1cDnyilFU='
