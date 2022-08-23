@@ -10,10 +10,9 @@ app.get('/',function(req,res){
 });//首頁
 
 //app監聽port(必須)
-// app.listen(process.env.port || 80, function () {
-//   console.log('app已準備就緒');
-// });// 沒有定義PORT 設置80
-
+app.listen(process.env.port || 80, function () {
+  console.log('app已準備就緒');
+});// 沒有定義PORT 設置80
 
 
 // 引用linebot SDK
@@ -63,13 +62,11 @@ bot.on('message', function (event) {
   // });
   
 });
-app.listen(process.env.PORT || 80, function () {
-	console.log('LineBot is running.');
-});
+
 // Bot所監聽的webhook路徑與port
 // bot.listen('/linewebhook', 3000, function () {
 //     console.log('BOT已準備就緒');
 // });
-// bot.listen('/linewebhook', function () {
-//   console.log('BOT已準備就緒');
-// });
+bot.listen('/linewebhook', function () {
+  console.log('BOT已準備就緒');
+});
