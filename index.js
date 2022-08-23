@@ -70,6 +70,6 @@ bot.on('message', function (event) {
 // bot.listen('/linewebhook', function () {
 //   console.log('BOT已準備就緒');
 // });
-app.listen('/linewebhook',process.env.port || 80, function () {
+bot.listen('/linewebhook',process.env.port || 80, function () {
   console.log('BOT已準備就緒');
 });// 沒有定義PORT 設置80
