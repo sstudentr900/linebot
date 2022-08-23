@@ -1,18 +1,18 @@
 // 引用express
-// const express = require('express');
+const express = require('express');
 
 //express 設置
-// const app = express();
+const app = express();
 
 //url
-// app.get('/',function(req,res){
-//   res.send('hello word')
-// });//首頁
+app.get('/',function(req,res){
+  res.send('hello word')
+});//首頁
 
 //app監聽port(必須)
-// app.listen(process.env.PORT || 80, function () {
-//   console.log('app已準備就緒');
-// });// 沒有定義PORT 設置80
+app.listen(process.env.port || 80, function () {
+  console.log('app已準備就緒');
+});// 沒有定義PORT 設置80
 
 
 
@@ -68,6 +68,6 @@ bot.on('message', function (event) {
 // bot.listen('/linewebhook', 3000, function () {
 //     console.log('BOT已準備就緒');
 // });
-bot.listen(process.env.PORT || 80, function () {
+bot.listen('/linewebhook', 80, function () {
   console.log('BOT已準備就緒');
 });
