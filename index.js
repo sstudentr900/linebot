@@ -22,9 +22,9 @@ const app = express();
 app.get('/',function(req,res){
   res.send('hello word')
 })
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`)
+// })
 //沒有定義PORT 設置80
 // app.listen(process.env.PORT || 80, function () {
 //   console.log('[BOT已準備就緒]');
