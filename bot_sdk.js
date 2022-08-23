@@ -1,3 +1,4 @@
+//https://line.github.io/line-bot-sdk-nodejs/api-reference/middleware.html#usage
 const express = require("express");
 const line = require("@line/bot-sdk");
 
@@ -8,12 +9,9 @@ const config = {
 
 const app = express();
 app.post("/", line.middleware(config), (req, res) => {
-  console.log()
-  // Promise
-  // .all(req.body.events.map(handleEvent))
-  // .then((result) =>
-  //   res.json(result)
-  // );
+  Promise.all(req.body.events.map(handleEvent)).then((result) =>
+    res.json(result)
+  );
 });
 
 const client = new line.Client(config);
