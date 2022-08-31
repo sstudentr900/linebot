@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const app = express()
 const port = 3310
 
-app.use('/api', require('./express_api_router'));
+app.use('/api', require('./express_api_crud'));
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
